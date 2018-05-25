@@ -449,7 +449,7 @@ class WXT5x0Driver(weewx.drivers.AbstractDevice):
                 try:
                     raw = self._station.get_composite()
                     logdbg("raw: %s" % _fmt(raw))
-                    data = Station.parse(raw)
+                    data = Station.parse(_fmt(raw))
                     logdbg("parsed: %s" % data)
                     packet = self._data_to_packet(data)
                     logdbg("mapped: %s" % packet)
